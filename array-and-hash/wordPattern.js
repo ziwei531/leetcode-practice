@@ -4,18 +4,28 @@
  * @return {boolean}
  */
 var wordPattern = function (pattern, s) {
-    // let sMap = new Map();
+    let splitS = s.split(" ");
+    let splitPattern = pattern.split("");
 
-    // for (let i = 0; i < split.length; i++) {
-    //     sMap.set(split[i], );
-    // }
+    let uniqueS = [...new Set(splitS)];
+    let uniquePattern = [...new Set(splitPattern)];
 
-    let split = s.split(" ");
-    // console.log(split);
+    if (uniqueS.length !== uniquePattern.length) return false;
 
-    let uniqueArr = [...new Set(split)];
+    let sMap = new Map();
 
-    console.log(sMap);
+    for (let i = 0; i < uniqueS.length; i++) {
+        sMap.set(uniqueS[i], uniquePattern[i]);
+    }
+
+    for (let i = 0; i < splitS.length; i++) {
+        splitS[i] = sMap.get(splitS[i]);
+    }
+
+    if (splitS.join("") === splitPattern.join("")) return true;
+    return false;
 };
 
 console.log(wordPattern("abba", "dog cat cat dog"));
+console.log(wordPattern("abba", "dog cat cat fish"));
+console.log(wordPattern("aaaa", "dog cat cat dog"));
