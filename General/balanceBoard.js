@@ -45,8 +45,6 @@ const balanceBoard = (s1, s2) => {
 
         needed = needed - (r1 + w1); // if it's RRRWWW (count of 6) to balance, it'll be 6 - count(r1, w1)
 
-        // let needed = balanceRequired;
-
         // console.log(needed);
         if (q1 > needed) {
             replacements += needed;
