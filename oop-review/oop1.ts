@@ -1,4 +1,4 @@
-class User {
+export class User {
     private _name: string;
     private _age: number;
 
@@ -32,7 +32,7 @@ class User {
     }
 }
 
-class Admin extends User {
+export class Admin extends User {
     private _role: string;
 
     constructor(name: string, age: number, role: string) {
@@ -53,14 +53,14 @@ class Admin extends User {
     }
 }
 
-let kedar = new User("Kedar", 12);
-let admin = new Admin("Kayle", 13, "Admin");
+// let kedar = new User("Kedar", 12);
+// let admin = new Admin("Kayle", 13, "Admin");
 
 // kedar.printName();
 // kedar.printAge();
 // kedar.setAge = 13;
 // kedar.printAge();
 
-admin.printName();
-admin.printAge();
-admin.printRole();
+// admin.printName();
+// admin.printAge();
+// admin.printRole();
