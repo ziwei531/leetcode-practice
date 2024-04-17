@@ -10,6 +10,9 @@ var wordPattern = function (pattern, s) {
     let uniqueS = [...new Set(splitS)];
     let uniquePattern = [...new Set(splitPattern)];
 
+    console.log(uniqueS);
+    console.log(uniquePattern);
+
     if (uniqueS.length !== uniquePattern.length) return false;
 
     let sMap = new Map();
@@ -18,9 +21,13 @@ var wordPattern = function (pattern, s) {
         sMap.set(uniqueS[i], uniquePattern[i]);
     }
 
+    // console.log(sMap);
+
     for (let i = 0; i < splitS.length; i++) {
         splitS[i] = sMap.get(splitS[i]);
     }
+
+    // console.log(splitS);
 
     if (splitS.join("") === splitPattern.join("")) return true;
     return false;

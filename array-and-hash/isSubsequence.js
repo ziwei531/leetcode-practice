@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 var isSubsequence = function (s, t) {
-    sArr = s.split("");
+    let sArr = s.split("");
 
     t = t.split("");
 
